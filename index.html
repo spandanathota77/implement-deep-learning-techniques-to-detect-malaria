@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malaria Detection Web App</title>
+    <style>
+        body {
+            background: url('/static/background.gif') no-repeat center center fixed;
+            background-size: cover;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            padding-top: 50px;
+        }
+        h1 {
+            font-size: 48px; /* Increased font size for the title */
+            margin-bottom: 30px; /* Added space below the title */
+        }
+        .container {
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 30px; /* Increased padding */
+            border-radius: 10px;
+            display: inline-block;
+        }
+        input[type="file"] {
+            margin: 20px 0;
+            padding: 15px; /* Increased padding for file input */
+            font-size: 18px; /* Larger font size for file input */
+            width: 100%; /* Full width for the input */
+            border: none; /* Remove border */
+            border-radius: 5px; /* Rounded corners */
+        }
+        button {
+            padding: 15px 30px; /* Increased padding for submit button */
+            border: none;
+            border-radius: 5px;
+            background-color: #28a745;
+            color: white;
+            font-size: 18px; /* Increased font size for button */
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+    </style>
+</head>
+<body>
+    <h1>Malaria Detection Web App</h1>
+    <div class="container">
+        <form action="/predict" method="POST" enctype="multipart/form-data">
+            <input type="file" name="file" accept="image/*" required>
+            <br>
+            <button type="submit">Upload and Submit</button>
+        </form>
+    </div>
+</body>
+</html>
